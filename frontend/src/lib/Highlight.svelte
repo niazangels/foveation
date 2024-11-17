@@ -70,6 +70,8 @@
 
 <style>
     .highlight {
+        /* transition: color .1s ease-out; */
+
         /* color: rgba(0, 0, 0, 1); */
         /* background-color: aliceblue; */
     }

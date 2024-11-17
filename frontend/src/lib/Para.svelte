@@ -3,6 +3,7 @@
     let distance = $state(0);
     let visibility = $state(0);
     let el;
+    let elRect = $state({});
 
 
     function distanceToVisibility(distance) {
@@ -20,6 +21,7 @@
         visibility = visibilityByMouse;
     }
 
+    
     onMount(() => {
         window.addEventListener('mousemove', updateVisibilityByMouse);
         return () => {
@@ -29,7 +31,7 @@
 </script>
 
 <!-- <p style="" bind:this={el}> -->
-<p style="color: rgba(0,0,0,{visibility});" bind:this={el}>
+<p style="color: rgba(0,0,0,{visibility}); background-color: rgba(255,255,255,{visibility});" bind:this={el}>
     <span class="dist">
         <!-- {visibility} -->
     </span>
@@ -39,17 +41,23 @@
 <style>
     p {
         position: relative;
-        border-left: 3px solid palevioletred;
-        padding-left: 10px;
         margin-bottom: 2rem;
         line-height: 1.5;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        }
+    p::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 10px;
+        border-left: 3px solid hsl(252, 15%, 70%);
+        height: 100%;
+        border-radius: 3px;
     }
     .dist {
         position: absolute;
         top: 0;
         left: -100px;
-    }
-    .highlight {
-        background-color: red;
     }
 </style>

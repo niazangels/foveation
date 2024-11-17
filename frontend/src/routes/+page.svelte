@@ -90,7 +90,10 @@
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
     }
 
-    .highlight {
-        background-color: yellow;
+    h1{
+        margin-block: 2rem 3rem;
+    }
+    :root {
+        background-color: #d8ddef47;
     }
 </style>
